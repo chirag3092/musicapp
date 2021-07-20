@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100%;
+  background: #C9D6FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  flex-direction: column;
+}
+
+.searchwrapper {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  position: relative;
+  margin: 2rem auto;
+}
+
+.searchwrapper > div:nth-child(2), .searchwrapper > div:nth-child(3) {
+  margin-left: 2rem;
+}
+
+.inputtext, button {
+  height: 2rem;
+  width: 12rem;
+  border-radius: 2rem;
+  border: 1px solid #E2E2E2;
+  padding: 0.5rem;
+}
+
+select {
+  height: 2rem;
+  border-radius: 2rem;
+  padding: 6px;
+}
+
+/* START: multiple select box  */
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  /* border: 1px #dadada solid; */
+  background: #dadada;
+  padding: 4px;
+}
+
+#checkboxes label {
+  display: block;
+  padding: 4px;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+/* END: multiple select box */
+
+button {
+  width: 8rem;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+
+button::before {
+  content: '';
+  border-radius: 2rem;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+  background: #45BFFA;
+  z-index: -1;
+}
+
+button:hover::before {
+  transform: translateX(0);
+}
+
+.inputtext:focus, button:focus {
+  outline-width: 0;
+}
+
+.cardWrapper {
+  display: flex;
+  position: relative;
+  margin: 2rem auto;
+  align-items: center;
+  width: 80%;
+  padding: 1rem;
+  box-shadow: 1px 1px 1px rgb(122 122 122 / 20%);
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s ease-in-out;
+ }
+
+ .cardWrapper:hover {
+  box-shadow: 6px 6px 20px 6px rgb(122 122 122 / 20%);
+ }
+
+/* .imagewrapper {
+  height: 12rem;
+  width: 200px;
+} */
+
+.image {
+  height: 12rem;
+  width: 12rem;
+}
+
+.cardWrapper > div:nth-child(2) {
+  margin-left: 2rem;
+}
+
+.title, .playsong, .songfile {
+  font-weight: 800;
+}
+
+.description, .duration, .playsong, .songfile {
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.duration {
+  font-style: italic;
+}
+
+.playsong, .songfile {
+  text-decoration: underline;
+}
+
+.songfile {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cardWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .searchwrapper {
+    flex-direction: column;
+  }
+  .searchwrapper > div:nth-child(2), .searchwrapper > div:nth-child(3) {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  select {
+    width: 14rem;
+  }
+
+  .multiselect {
+    width: 14rem;
+  }
+
+  .inputtext, button {
+    width: 14rem;
+  }
+
+  .imagewrapper {
+    margin: 0 auto;
+  }
+}

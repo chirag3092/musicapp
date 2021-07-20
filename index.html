@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Music Search App</title>
+</head>
+<body>
+  <main>
+    <div class="searchwrapper">
+      <div class="dropdown">
+        <div class="multiselect">
+          <div class="selectBox" onclick="showCheckboxes()">
+            <select>
+              <option>Select an option</option>
+            </select>
+            <div class="overSelect"></div>
+          </div>
+          <div id="checkboxes">
+            <label for="alloption">
+              <input type="checkbox" id="alloption" value="all" />&nbsp;All
+            </label>
+            <label for="title">
+              <input type="checkbox" id="title" value="title" name="options" />&nbsp;Title
+            </label>
+            <label for="description">
+              <input type="checkbox" id="description" value="description" name="options" />&nbsp;Description
+            </label>
+            <label for="keywords">
+              <input type="checkbox" id="keywords" value="keywords" name="options" />&nbsp;keywords
+            </label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <input class="inputtext" type="text" name="keyword" id="keyword" placeholder="search..." >
+      </div>
+      <div>
+        <button id="search" >Search</button>
+      </div>
+    </div>
+    <div id="musicdata"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
